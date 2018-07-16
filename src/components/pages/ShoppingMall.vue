@@ -59,7 +59,7 @@
       </div>
       <div class="hot-goods">
         <van-list>
-          <van-row gutter="20">
+          <van-row>
             <van-col span="12" v-for="(item, index) in hotGoods" :key="index">
               <goods-info :goodsImage="item.image" :goodsName="item.name" :goodsPrice="item.price"></goods-info>
             </van-col>
@@ -77,6 +77,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import floorComponent from 'components/component/floorComponent'
 import { toMoney } from '@/filter/moneyFilter.js'
 import goodsInfo from 'components/component/goodsInfoComponent'
+import url from '@/serviceAPI.config.js'
 
 export default {
   data () {
@@ -109,7 +110,7 @@ export default {
   },
   created () {
     axios({
-      url: 'https://www.easy-mock.com/mock/5b48a796226e381d25bdc2ee/SmileVue/index',
+      url: url.getShoppingMallInfo,
       method: 'get'
     })
       .then(response => {
