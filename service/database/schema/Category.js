@@ -10,4 +10,4 @@ const categorySchema = new Schema({
   COMMENTS: { type: String }
 })
 
-mongoose.model('category', categorySchema)
+mongoose.model('Category', categorySchema)
